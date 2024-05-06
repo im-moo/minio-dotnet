@@ -39,9 +39,9 @@ public static class FileUpload
         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
                                                | SecurityProtocolType.Tls11
                                                | SecurityProtocolType.Tls12;
-        var endpoint = "play.min.io";
-        var accessKey = "Q3AM3UQ867SPQQA43P2F";
-        var secretKey = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
+        var endpoint = "127.0.0.1";
+        var accessKey = "LzjepDrWDX8jUdTa3j3j";
+        var secretKey = "zuf+tsIaJ4aZMx7ENA6TcyGqsweM8lLAC9cQ00iBZYvw";
 
         try
         {
@@ -68,13 +68,13 @@ public static class FileUpload
     private static async Task Run(IMinioClient minio)
     {
         // Make a new bucket called mymusic.
-        var bucketName = "mymusic-folder"; //<==== change this
+        var bucketName = "change"; //<==== change this
         var location = "us-east-1";
         // Upload the zip file
-        var objectName = "my-golden-oldies.mp3";
+        var objectName = "reset_navicat.sh";
         // The following is a source file that needs to be created in
         // your local filesystem.
-        var filePath = "C:\\Users\\vagrant\\Downloads\\golden_oldies.mp3";
+        var filePath = @"/Users/immoo/Desktop/reset_navicat.sh";
         var contentType = "application/zip";
 
         try

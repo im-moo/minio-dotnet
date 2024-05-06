@@ -84,9 +84,9 @@ public static class Program
         }
         else
         {
-            endPoint = "play.min.io";
-            accessKey = "Q3AM3UQ867SPQQA43P2F";
-            secretKey = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
+            endPoint = "127.0.0.1";
+            accessKey = "LzjepDrWDX8jUdTa3j3j";
+            secretKey = "zuf+tsIaJ4aZMx7ENA6TcyGqsweM8lLAC9cQ00iBZYvw";
             isSecure = true;
             port = 443;
         }
@@ -122,7 +122,7 @@ public static class Program
         for (var i = 0; i < 10; i++) objectsList.Add(objectName + i);
 
         // Set app Info 
-        minioClient.SetAppInfo("app-name", "app-version");
+        _ = minioClient.SetAppInfo("app-name", "app-version");
 
         // Set HTTP Tracing On
         // minioClient.SetTraceOn();
@@ -237,11 +237,11 @@ public static class Program
         await RemoveObjectLockConfiguration.Run(minioClient, lockBucketName).ConfigureAwait(false);
         await RemoveBucket.Run(minioClient, lockBucketName).ConfigureAwait(false);
 
-        // Bucket Replication operations
-        var replicationRuleID = "myreplicationID-3333";
-        await SetBucketReplication.Run(minioClient, bucketName, destBucketName, replicationRuleID)
-            .ConfigureAwait(false);
-        await GetBucketReplication.Run(minioClient, bucketName, replicationRuleID).ConfigureAwait(false);
+        // Fixme: Bucket Replication operations
+        //var replicationRuleID = "myreplicationID-3333";
+        //await SetBucketReplication.Run(minioClient, bucketName, destBucketName, replicationRuleID)
+        //    .ConfigureAwait(false);
+        //await GetBucketReplication.Run(minioClient, bucketName, replicationRuleID).ConfigureAwait(false);
         // TODO: we can verify that the replication happens by checking
         // the content in the destination matches the source content.
         //     We also cannot remove the replication config immediately
